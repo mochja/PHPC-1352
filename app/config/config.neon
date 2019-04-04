@@ -22,4 +22,7 @@ services:
 	- App\Forms\SignInFormFactory
 	- App\Forms\SignUpFormFactory
 	router: App\RouterFactory::createRouter
-	- MongoDB\Client(mongodb://localhost:27017)
+	- MongoDB\Client()
+	- @MongoDB\Client::selectCollection(test, foo)
+	- MongoDB\Driver\WriteConcern(majority)
+	- MongoDB\Driver\ReadPreference(primaryPreferred)
