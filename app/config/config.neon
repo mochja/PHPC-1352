@@ -17,10 +17,6 @@ extensions:
   f: App\Presenters\FooExtension
 
 services:
-	- App\Model\UserManager
-	- App\Forms\FormFactory
-	- App\Forms\SignInFormFactory
-	- App\Forms\SignUpFormFactory
 	router: App\RouterFactory::createRouter
 	- MongoDB\Client()
 	- @MongoDB\Client::selectCollection(test, foo)
